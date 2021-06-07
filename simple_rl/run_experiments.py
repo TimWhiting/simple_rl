@@ -85,7 +85,7 @@ def play_markov_game(agent_ls, markov_game_mdp, instances=10, episodes=100, step
                 # Terminal check.
                 if state.is_terminal():
                     experiment.add_experience(agent_dict, state, action_dict, defaultdict(int), state)
-                    continue
+                    break
 
                 # Execute in MDP.
                 reward_dict, next_state = markov_game_mdp.execute_agent_action(action_dict)
